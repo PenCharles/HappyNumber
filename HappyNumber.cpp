@@ -6,30 +6,30 @@ using namespace std;
 
 	//Author: James Saylor
 	//Description : This program will prompt user for 2 pos numbers. The first num
-	//				must be equal or less than the second num. The program will then
-	//				cycle through sequence to determine if the number is happy or
-	//				unhappy
+	//must be equal or less than the second num. The program will then
+	//cycle through sequence to determine if the number is happy or
+	//unhappy
 
 //global constants
-const int MIN = 1;		//smallest num a user can enter
+const int MIN = 1;	//smallest num a user can enter
 const int MAX = 9999;	//largest num a user can enter
 
 //function prototypes
 void VerifyNum (int& lowNum, int& highNum); //verify input based on MIN and MAX
-bool HappyNum (int num);					//calc and display num in sequence
-											//determines happiness
+bool HappyNum (int num);		   //calc and display num in sequence
+											
 
 int main ()
 {
 	//local variables
-	int lowNum;		//lowest user num in the sequence
+	int lowNum;	//lowest user num in the sequence
 	int highNum;	//highest user num in the sequence
 	bool happy;	//indicates a happy or unhappy num
 	
 	cout << endl << "This program will test for happy numbers" << endl << endl;
 	VerifyNum (lowNum, highNum);
 	
-	do								//do...while loop will cycle through all num
+	do			//do...while loop will cycle through all num
 	{
 		happy = HappyNum(lowNum);
 		lowNum++;
@@ -77,8 +77,8 @@ bool HappyNum (int num)
 	cout << setw(8) << num;					//must see the first num in the seq
 	do
 	{
-		do									//this do...while loop splits the 
-		{									//numbers up and then performs math
+		do						//this do...while loop splits the 
+		{						//numbers up and then performs math
 			numSplit = num % 10;			//calc to see if they are happy
 			sum = sum + pow(numSplit, 2);
 			num = num / 10;	
